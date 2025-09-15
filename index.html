@@ -1,1 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday Mom!</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #ffe4ec; /* light pink */
+      font-family: 'Segoe UI', sans-serif;
+    }
 
+    .card {
+      width: 500px;
+      height: 350px;
+      perspective: 1000px;
+      cursor: pointer;
+    }
+
+    .inner {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 1s;
+    }
+
+    .card.open .inner {
+      transform: rotateY(180deg);
+    }
+
+    .front, .back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      backface-visibility: hidden;
+    }
+
+    .front {
+      background: white;
+      color: purple;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .back {
+      background: #fff0f6;
+      color: purple;
+      transform: rotateY(180deg);
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
+      overflow-y: auto;
+    }
+
+    .back h1 {
+      margin-bottom: 10px;
+      font-size: 26px;
+    }
+
+    .back p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .photos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 10px;
+      justify-items: center;
+    }
+
+    .photos img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="card" onclick="this.classList.toggle('open')">
+    <div class="inner">
+      <!-- Front of the card -->
+      <div class="front">
+        🎉 Click to Open 🎉
+      </div>
+
+      <!-- Inside of the card -->
+      <div class="back">
+        <h1>Happy 51st Birthday, Mom! 💜</h1>
+        <p>You are the heart of our family, and today we celebrate you with love.</p>
+        <div class="photos">
+          <!-- Add as many photos as you want -->
+          <img src="C1FDBC04-6C4B-412C-A803-D838E119482E.jpeg" alt="Mom and Me">
+          <img src="photo2.jpg" alt="Photo 2">
+          <img src="photo3.jpg" alt="Photo 3">
+          <img src="photo4.jpg" alt="Photo 4">
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
